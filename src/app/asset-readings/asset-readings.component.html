@@ -1,0 +1,80 @@
+<!-- <div class="tabs">
+    <ul>
+        <li>&nbsp;</li>
+        <li *ngFor = "let asset of assets">
+            <a routerLink="/{{asset.assetCode}}" class="navbar-item"><b>{{asset.assetCode}}</b></a>
+        </li>
+    </ul>
+</div>
+ -->
+<div class="tabs is-small is-toggle">
+  <ul>
+    <li [class.is-active]="displayPing">
+      <a (click)="showStatus()" >Status</a>
+    </li>
+    <li *ngFor = "let asset of assets" [class.is-active]="this.currentAsset == asset.assetCode">
+        <a (click)="showAsset(asset.assetCode)"> {{asset.assetCode}} </a>
+    </li>
+  </ul>
+</div>
+
+<div class="columns is-mobile">
+  <div *ngIf = "displayPing" class="column">
+    <div class="box">
+      <p>Uptime: <b>{{uptime}}</b></p>
+      <br/>
+      <p>Data Read: <b>{{dataRead|number}}</b></p>
+      <p>Data Sent: <b>{{dataSent|number}}</b></p>
+      <p>Data Purged: <b>{{dataPurged|number}}</b></p>
+    </div>
+  </div>
+  <div *ngIf = "displayAsset" class="column is-narrow">
+    <!-- <div>{{ name }}</div> -->
+    <div class="box" style="width: 200px;">
+      <div class="title is-large has-text-centered"><h1>{{ latest_reading | number: '1.1-1' }}</h1></div>
+    </div>
+  </div>
+  <div *ngIf = "displayAsset" class="column">
+    <div class="box" style="width: 240px;">
+      <chart [type]="chartType" [data]="chartData" [options]="chartOptions">
+      </chart>
+    </div>
+  </div>
+</div>
+<!-- <div>{{ assets | json }}</div> -->
+<!-- <div>{{ chartData | json }}</div> -->
+<!-- <table class="table is-striped is-narrow scroll is-responsive">
+  <thead>
+    <tr>
+      <th>Asset</th>
+      <th>Readings</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let asset of assets">
+      <td>{{ asset.assetCode }}</td>
+      <td>
+        <small>{{ asset.count }}</small>
+      </td>
+    </tr>
+    <tbody>
+</table>
+ -->
+<!-- <table class="table is-striped is-narrow scroll is-responsive">
+  <thead>
+    <tr>
+      <th>Timestamp</th>
+      <th>Asset Reading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let assetReading of assetReadings">
+      <td>{{ assetReading.timestamp }}</td>
+      <td>{{ assetReading.reading | json }}</td>
+    </tr>
+    <tbody>
+</table>
+
+ -->
