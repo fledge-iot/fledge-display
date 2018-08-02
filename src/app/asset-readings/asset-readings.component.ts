@@ -17,7 +17,7 @@ export class AssetReadingsComponent implements OnInit {
   public chartData: any;
   public chartOptions: any;
 
-  public currentAsset: string = 'sinusoid';
+  public currentAsset: string = null;
   public name: string;
   public latest_reading: number;
   public interval: number;
@@ -29,6 +29,10 @@ export class AssetReadingsComponent implements OnInit {
   public dataSent;
   public dataPurged;
   public uptime;
+  public health;
+  public ipAddresses;
+  public serviceName;
+  public hostName;
 
   assets = [];
   assetReadings = [];
@@ -42,8 +46,8 @@ export class AssetReadingsComponent implements OnInit {
     console.log(window.location.hostname);
     // this.ip = window.location.origin;
 
-    this.displayAsset = true;
-    this.displayPing = false;
+    this.displayAsset = false;
+    this.displayPing = true;
     this.chartOptions = {
       legend: {display: false},
       animation: {duration: 0},
@@ -109,6 +113,10 @@ export class AssetReadingsComponent implements OnInit {
     this.dataRead = pingResponse.dataRead;
     this.dataSent = pingResponse.dataSent;
     this.dataPurged = pingResponse.dataPurged;
+    this.health = pingResponse.health;
+    this.ipAddresses = pingResponse.ipAddresses;
+    this.serviceName = pingResponse.serviceName;
+    this.hostName = pingResponse.hostName;
 
     const totSecs: number = Math.floor(pingResponse.uptime);
     const upHours: number = Math.floor(totSecs/3600);

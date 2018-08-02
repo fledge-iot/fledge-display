@@ -21,11 +21,16 @@
 <div class="columns is-mobile">
   <div *ngIf = "displayPing" class="column">
     <div class="box">
-      <p>Uptime: <b>{{uptime}}</b></p>
+      <p>Health: <b>{{health}}</b> &nbsp;&nbsp;&nbsp;&nbsp;Uptime: <b>{{uptime}}</b></p>
       <br/>
-      <p>Data Read: <b>{{dataRead|number}}</b></p>
-      <p>Data Sent: <b>{{dataSent|number}}</b></p>
-      <p>Data Purged: <b>{{dataPurged|number}}</b></p>
+      <p>
+        Data Read: <b>{{dataRead|number}}</b>&nbsp;&nbsp;
+        Sent: <b>{{dataSent|number}}</b>&nbsp;&nbsp;
+        Purged: <b>{{dataPurged|number}}</b>
+      </p>
+      <br/>
+      <p>Host/Service: <b>{{hostName}}/{{serviceName}}</b></p>
+      <span *ngFor = "let ip of ipAddresses">{{ip}}&nbsp;&nbsp;&nbsp;</span>
     </div>
   </div>
   <div *ngIf = "displayAsset" class="column is-narrow">
