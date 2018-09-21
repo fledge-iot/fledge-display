@@ -82,6 +82,7 @@ echo
 
 # Prepare build artifacts
 yarn clean
+yarn install
 yarn build
 
 # Create the package directory. If a directory with the same name exists,
