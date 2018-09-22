@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
-// import { MomentDatePipe } from './moment-date';
+import { MomentDatePipe } from './moment-date';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
@@ -15,8 +15,8 @@ import { ChartComponent } from './chart/chart.component';
     AppComponent,
     FooterComponent,
     AssetReadingsComponent,
-    ChartComponent
-    // MomentDatePipe
+    ChartComponent,
+    MomentDatePipe
   ],
   imports: [
     BrowserModule,
