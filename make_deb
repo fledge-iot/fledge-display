@@ -22,13 +22,13 @@
 set -e
 
 GIT_ROOT=`pwd`    # The script must be executed from the root git directory
-usage="$(basename "$0") help [clean|cleanall]
+usage="$(basename "$0") [-h | --help | help] [clean|cleanall]
 This script is used to create the Debian package of foglamp-display
 
 Arguments:
- help     - Display this help text
- clean    - Remove all the old versions saved in format .XXXX
- cleanall - Remove all the versions, including the last one"
+ -h | --help | help    - Display this help text
+ clean                 - Remove all the old versions saved in format .XXXX
+ cleanall              - Remove all the versions, including the last one"
 
 for i in "$@"
 do
