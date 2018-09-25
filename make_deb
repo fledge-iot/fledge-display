@@ -117,7 +117,7 @@ echo "Done."
 
 echo "Copying build artifacts for nginx webroot directory..."
 mkdir -p var/www/html
-cp -R ${GIT_ROOT}/dist/foglamp-display/* var/www/html/
+cp -R ${GIT_ROOT}/dist/* var/www/html/
 echo "Done."
 
 # Build the package
