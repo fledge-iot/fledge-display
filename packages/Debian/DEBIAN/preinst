@@ -26,7 +26,7 @@
 ##--------------------------------------------------------------------
 
 
-echo "Installing FogLAMP Display"
+echo "Installing Fledge Display"
 stop_nginx_service () {
     sudo service nginx stop
 }

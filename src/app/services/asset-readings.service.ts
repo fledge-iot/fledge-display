@@ -15,7 +15,7 @@ export class AssetReadingsService {
   constructor(private http: HttpClient) { }
 
   /**
-  * GET  | foglamp/asset
+  * GET  | fledge/asset
   * Return a summary count of all asset readings
   */
   public getAsset() {
@@ -25,7 +25,7 @@ export class AssetReadingsService {
   }
 
   /**
-  *  /foglamp/asset/{assetCode}
+  *  /fledge/asset/{assetCode}
   * @param assetCode
   * @param limit
   * @param offset

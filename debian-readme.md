@@ -6,10 +6,10 @@ Use `./make_deb` script to create debian package, the package will be placed in 
 ```
  $ ./make_deb
 Operating System Type: Linux
-The package root directory is         : /home/foglamp/foglamp-display
-The FogLAMP display version is        : 1.0.0
-The package will be built in          : /home/foglamp/foglamp-display/packages/build
-The package name is                   : foglamp-display-1.0.0
+The package root directory is         : /home/fledge/fledge-display
+The Fledge display version is        : 1.0.0
+The package will be built in          : /home/fledge/fledge-display/packages/build
+The package name is                   : fledge-display-1.0.0
 
 yarn run v1.9.2
 $ rm -rf dist && rm -rf node_modules && yarn cache clean
@@ -36,7 +36,7 @@ Populating the package and updating version file...Done.
 Copying build artifacts for nginx webroot directory...
 Done.
 Building the new debian package...
-dpkg-deb: building package 'foglamp-display' in 'foglamp-display-1.0.0.deb'.
+dpkg-deb: building package 'fledge-display' in 'fledge-display-1.0.0.deb'.
 Done.
 
 ```
@@ -46,14 +46,14 @@ Done.
 Use the ``apt`` or the ``apt-get`` command
 
 ```
-$sudo cp packages/build/foglamp-display-1.0.0.deb /var/cache/apt/archives/.
-$sudo apt install /var/cache/apt/archives/foglamp-display-1.0.0.deb
+$sudo cp packages/build/fledge-display-1.0.0.deb /var/cache/apt/archives/.
+$sudo apt install /var/cache/apt/archives/fledge-display-1.0.0.deb
 ```
 
 #### Uninstalling debian package
 
 ```
-$ sudo apt remove foglamp-display
+$ sudo apt remove fledge-display
 ```
 
-> you may want to check debian package contents with `sudo dpkg -c foglamp-display-1.0.0.deb` or can install in dev env with `sudo dpkg -i foglamp-display-1.0.0.deb`
+> you may want to check debian package contents with `sudo dpkg -c fledge-display-1.0.0.deb` or can install in dev env with `sudo dpkg -i fledge-display-1.0.0.deb`

@@ -15,7 +15,7 @@ export class PingService {
   constructor(private http: HttpClient) { }
 
   /**
-   *    GET  | /foglamp/ping
+   *    GET  | /fledge/ping
    */
   public ping() {
     return this.http.get(this.PING).pipe(
