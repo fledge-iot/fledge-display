@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   // base_url: 'http://' + location.hostname + ':8081/fledge/'
-  base_url: 'http://' + '192.168.1.71' + ':8081/fledge/'
+  base_url: 'http://' + 'localhost' + ':8081/fledge/'
   // base_url: 'http://' + '192.168.137.167' + ':8081/fledge/'
 };
 
