@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-##--------------------------------------------------------------------
-## Copyright (c) 2018 Dianomic Systems
+##--------------------------------------------------------------------------
+## Copyright (c) 2018-2022 Dianomic Systems Inc.
 ##
 ## Licensed under the Apache License, Version 2.0 (the "License");
 ## you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 ## WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 ## See the License for the specific language governing permissions and
 ## limitations under the License.
-##--------------------------------------------------------------------
+##--------------------------------------------------------------------------
 ##
 ## Author: Monika Sharma
 ##
 
 set -e
 
-GIT_ROOT=`pwd`    # The script must be executed from the root git directory
+GIT_ROOT=$(pwd)    # The script must be executed from the root git directory
 usage="$(basename "$0") [-h | --help | help] [clean|cleanall]
 This script is used to create the Debian package of fledge-display
 
@@ -72,7 +72,7 @@ then
   exit 1
 fi
 
-version=`cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[" ,]//g'`
+version=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[" ,]//g')
 BUILD_ROOT="${GIT_ROOT}/packages/build"
 
 # Final package name
@@ -80,7 +80,7 @@ package_name="fledge-display-${version}"
 
 # Print the summary of findings
 echo "The package root directory is         : ${GIT_ROOT}"
-echo "The Fledge display version is        : ${version}"
+echo "The Fledge display version is         : ${version}"
 echo "The package will be built in          : ${BUILD_ROOT}"
 echo "The package name is                   : ${package_name}"
 echo
@@ -99,7 +99,7 @@ if [ ! -L "${BUILD_ROOT}" -a ! -d "${BUILD_ROOT}" ]; then
 fi
 
 cd "${BUILD_ROOT}"
-existing_pkgs=`find . -maxdepth 1 -name "${package_name}.????" | wc -l`
+existing_pkgs=$(find . -maxdepth 1 -name "${package_name}.????" | wc -l)
 existing_pkgs=$((existing_pkgs+1))
 new_stored_pkg=$(printf "${package_name}.%04d" "${existing_pkgs}")
 if [ -d "${package_name}" ]; then
@@ -124,7 +124,7 @@ echo "Done."
 cd "${BUILD_ROOT}"
 
 # Save the old versions
-existing_pkgs=`find . -maxdepth 1 -name "${package_name}.deb.????" | wc -l`
+existing_pkgs=$(find . -maxdepth 1 -name "${package_name}.deb.????" | wc -l)
 existing_pkgs=$((existing_pkgs+1))
 new_stored_pkg=$(printf "${package_name}.deb.%04d" "${existing_pkgs}")
 
