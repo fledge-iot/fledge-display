@@ -4,6 +4,8 @@ Mini Display for Fledge
 App to be used on screen on a Raspberry Pi (or other small device). Displays a tab with ping results, and auto-populated tabs, one for each asset. For each tab, the current value is shown and a graph showing recent asset readings.
 
 ## Initial Setup
+Nodejs v16 or above must be installed.
+Yarn (`https://www.npmjs.com/package/yarn`) must be installed.
 Dependent libraries have not been committed (since they will be different on different platforms). Before executing, run `yarn` to pull all needed libraries. These will be pulled into [root]/node_modules
 
 ## Configuration
@@ -23,12 +25,4 @@ Run `yarn build` to build the project. The build artifacts will be stored in the
 ## Clean
 
 Run `yarn clean` to clean the build and dependencies.
-
-## Running unit tests
-
-Run `yarn test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `yarn e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
